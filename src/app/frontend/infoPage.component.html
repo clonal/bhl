@@ -1,9 +1,40 @@
-<div>
-  栏目名称
-</div>
-<div>
-  栏目banner
-</div>
-<div>
-  <a routerLink="/news">栏目文章</a>
+<div *ngIf="column$ | async as column">
+  <div>
+    {{column.name}}
+  </div>
+  <div>
+    <img [src]="column.banner" />
+  </div>
+  <div>
+    {{column.desc}}
+  </div>
+
+  {{children | json}}
+
+  <div *ngIf="column.parent === 0">
+    <ul *ngFor="let childColumn of children">
+      aa: {{childColumn | json}}
+      <li>
+        <div>
+          <img [src]="childColumn.banner" />
+        </div>
+        <div>
+          <a [routerLink]="'/column/' + childColumn.name" >{{childColumn.name}}</a>
+        </div>
+        <div>
+          {{childColumn.desc}}
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="column.parent !== 0">
+    <ul *ngFor="let article of children">
+      <li>
+        <div>
+          <a [routerLink]="'/news/' + article.id" >{{article.title}}</a>  {{article.date}}
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

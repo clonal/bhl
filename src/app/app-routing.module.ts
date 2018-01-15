@@ -22,16 +22,24 @@ const appRoutes: Routes = [
     component: ProductPageComponent
   },
   {
+    path: 'column/:name',
+    component: InfoPageComponent
+  },
+  {
     path: 'aboutUs',
     component: InfoPageComponent
   },
   {
-    path: 'news',
+    path: 'news/:id',
     component: NewsPageComponent
   },
   {
     path: 'support',
     component: QuestionsComponent
+  },
+  {
+    path: 'community',
+    component: IndexComponent
   },
   {
     path: '',

@@ -11,6 +11,7 @@ import {ProductPageComponent} from './frontend/productPage.component';
 import {InfoPageComponent} from './frontend/infoPage.component';
 import {NewsPageComponent} from './frontend/newsPage.component';
 import {QuestionsComponent} from './frontend/questions.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,11 @@ import {QuestionsComponent} from './frontend/questions.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

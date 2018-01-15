@@ -1,21 +1,29 @@
-<div>
-  banner图
+<div *ngFor="let url of homeBanner">
+  <img [src]="'images/' + url"/>
 </div>
 
 <div>
-  栏目1
+  <a>产品支持</a>
 </div>
 <div>
-  栏目2
+  <a>最新活动</a>
 </div>
 <div>
-  栏目3
+  <a>优惠减免</a>
 </div>
 <div>
-  栏目4
+  <a>免费试用</a>
 </div>
 
 <div>
-  产品
+  热销产品
+  <ul *ngFor="let product of products">
+    <li>
+      <a [routerLink]="'/products/' + product.id">{{product.name}}</a>
+      <img [src]="product.images[0]" />
+      <div>{{product.content}}</div>
+    </li>
+  </ul>
+  <a routerLink="/products"> 更多产品 </a>
 </div>
 

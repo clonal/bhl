@@ -1,8 +1,21 @@
 
 <div>
   产品分类
+  <ul *ngFor="let category of categories">
+    <li>
+      <a [routerLink]="'/products'">{{category.name}}</a>
+      <img [src]="category.banner" />
+    </li>
+  </ul>
 </div>
 
 <div>
   产品列表
+  <ul *ngFor="let product of products">
+    <li>
+      <a [routerLink]="'/products/' + product.id">{{product.name}}</a>
+      <img [src]="product.images[0]" />
+      <div>{{product.content}}</div>
+    </li>
+  </ul>
 </div>
