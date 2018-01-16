@@ -11,7 +11,10 @@ import {ProductPageComponent} from './frontend/productPage.component';
 import {InfoPageComponent} from './frontend/infoPage.component';
 import {NewsPageComponent} from './frontend/newsPage.component';
 import {QuestionsComponent} from './frontend/questions.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import {DateService} from './utils/date.service';
+import {FeedbackComponent} from './frontend/feedback.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,13 +27,17 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     InfoPageComponent,
     NewsPageComponent,
     QuestionsComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
+    DateService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,10 @@
-<div>
-  新闻名称
-</div>
-<div>
-  新闻文章
+<div *ngIf="article$ | async as _article">
+
+  <div>
+    {{_article.title}}
+  </div>
+  <div>{{_article.date}}</div>
+  <p>
+      {{_article.content}}
+  </p>
 </div>

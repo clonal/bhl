@@ -7,6 +7,7 @@ import {ProductPageComponent} from './frontend/productPage.component';
 import {InfoPageComponent} from './frontend/infoPage.component';
 import {NewsPageComponent} from './frontend/newsPage.component';
 import {QuestionsComponent} from './frontend/questions.component';
+import {FeedbackComponent} from "./frontend/feedback.component";
 
 const appRoutes: Routes = [
   {
@@ -20,6 +21,14 @@ const appRoutes: Routes = [
   {
     path: 'products/:id',
     component: ProductPageComponent
+  },
+  {
+    path: 'column/faq',
+    component: QuestionsComponent
+  },
+  {
+    path: 'column/community',
+    component: FeedbackComponent
   },
   {
     path: 'column/:name',
@@ -36,10 +45,6 @@ const appRoutes: Routes = [
   {
     path: 'support',
     component: QuestionsComponent
-  },
-  {
-    path: 'community',
-    component: IndexComponent
   },
   {
     path: '',

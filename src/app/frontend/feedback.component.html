@@ -1,0 +1,37 @@
+<h3>提交反馈</h3>
+<form [formGroup]="feedbackForm" novalidate (submit)="onSubmit()">
+  <div class="form-group">
+    <label class="center-block">类型:
+      <select class="form-control" formControlName="category">
+        <option value="1">退款</option>
+        <option value="2">维修</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">姓名:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">邮箱:
+      <input class="form-control" formControlName="email">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">订单号:
+      <input class="form-control" formControlName="order">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">描述:
+      <input class="form-control" formControlName="suggest">
+    </label>
+  </div>
+
+  <button type="submit" >Save</button>
+</form>

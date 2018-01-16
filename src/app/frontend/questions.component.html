@@ -1,6 +1,9 @@
-<div>
-  问题banner
-</div>
-<div>
-  问答
+<div *ngIf="questions$ | async as questions">
+  <ul *ngFor="let qa of questions">
+    <li>
+      Q: {{qa.question}}
+      <br/>
+      A: {{qa.answer}}
+    </li>
+  </ul>
 </div>
